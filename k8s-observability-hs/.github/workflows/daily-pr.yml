@@ -1,0 +1,27 @@
+name: Daily Pull Request
+
+on:
+  schedule:
+    - cron: '0 8 * * *'
+
+jobs:
+  daily-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Update timestamp
+        run: |
+          echo "// Last update: $(date -u)" > daily-update.txt
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "Daily update $(date -u)" || echo "No changes"
+
+      - name: Create PR
+        uses: peter-evans/create-pull-request@v5
+        with:
+          commit-message: "Automated daily update"
+          title: "Daily Update - $(date -u)"
+          body: "This is an automated PR with the daily update."
