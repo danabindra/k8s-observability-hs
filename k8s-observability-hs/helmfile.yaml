@@ -5,31 +5,31 @@ repositories:
     url: https://prometheus-community.github.io/helm-charts
 
 releases:
-  - name: prometheus
+  - name: prometheus-hs
     namespace: monitoring
     chart: prometheus-community/prometheus
     values:
       - values/dev.yaml
 
-  - name: grafana
+  - name: grafana-hs
     namespace: monitoring
     chart: grafana/grafana
     values:
       - values/dev.yaml
 
-  - name: loki
+  - name: loki-hs
     namespace: monitoring
     chart: grafana/loki
     values:
       - values/dev.yaml
 
-  - name: alertmanager
+  - name: alertmanager-hs
     namespace: monitoring
     chart: prometheus-community/alertmanager
     values:
       - values/dev.yaml
 
-  - name: alloy
+  - name: alloy-hs
     namespace: monitoring
     chart: ./charts/alloy
     values:
