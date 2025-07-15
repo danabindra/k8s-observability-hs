@@ -1,0 +1,61 @@
+# Zip files
+*.zip
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Secrets and environment files
+.env
+.env.local
+.env.production
+.env.staging
+*.pem
+*.key
+*.crt
+*.p12
+secrets/
+config/secrets/
+
+# Dependencies and packages
+node_modules/
+vendor/
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Build outputs
+dist/
+build/
+target/
+*.class
+*.jar
+*.war
+
+# Coverage reports
+coverage/
+.coverage
+*.lcov
+
+# Cache directories
+.cache/
+.npm/
+.yarn/ 
